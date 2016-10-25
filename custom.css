@@ -1,55 +1,108 @@
+/**
+ * custom font installation
+ **/
 @import 'https://fonts.googleapis.com/earlyaccess/mplus1p.css';
 
+
+/**
+ * style guides
+ **/
 * {
-    font-family: "Mplus 1p";
+  font-family: "Mplus 1p";
 }
 
 .menu .wrapper, #links, #search, .title, #posts, .post, .post h3, .post p, .post ul, .post ol, .post .caption, .post .description, #posts footer, .response, #disqus, #notes, .page-title {
-    max-width: 1024px;
+  max-width: 1024px;
+}
+
+@media (max-width: 1643px ) {
+  .menu .wrapper, #links, #search, .title, #posts, .post, .post h3, .post p, .post ul, .post ol, .post .caption, .post .description, #posts footer, .response, #disqus, #notes, .page-title {
+    padding-right: 150px;
+  }
 }
 
 .portrait,
 .portrait > img {
-    border-radius: 0;
+  border-radius: 0;
 }
 
 h1.title {
-    position: relative;
-    margin-top: 60px !important;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 80px;
+  position: relative;
+  margin-top: 60px !important;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 80px;
 }
 h1.title:before {
-    content: '';
-    opacity: 0.25;
-    z-index: 1;
-    position: absolute;
-    top: 25%;
-    right: -50px;
-    bottom: 25%;
-    left: -50px;
-    display: block;
-    background-color: #F1AD50;
+  content: '';
+  opacity: 0.25;
+  z-index: 1;
+  position: absolute;
+  top: 25%;
+  right: -50px;
+  bottom: 25%;
+  left: -50px;
+  display: block;
+  background-color: #F1AD50;
 }
 h1.title > a {
-    position: relative;
-    z-index: 2;
-    color: #555555;
+  position: relative;
+  z-index: 2;
+  color: #555555;
 }
 
+/**
+ * advertisements
+ **/
 .sg-funny-banner {
-    position: relative;
-    padding-right: 200px;
-    padding-left: 200px;
+  position: relative;
+  padding-right: 200px;
+  padding-left: 200px;
 }
-.sg-funny-banner:before {
-    content: '広告';
-    position: absolute;
-    padding: 0 10px;
-    background-color: rgba(255,255,255,0.7);
-    color: blue;
+.sg-funny-banner > li:before {
+  content: '広告';
+  position: absolute;
+  padding: 0 10px;
+  background-color: #FFFFFF;
+  background-color: rgba(255,255,255, 0.7);
+  color: blue;
 }
-.sg-funny-banner > a > img {
-    width: 100%;
+.sg-funny-banner > li > a > img {
+  width: 100%;
+}
+
+.sg-instant-store {
+  position: fixed;
+}
+
+/* min-width => browserMinimumWidth + storeWidth*2 + storeMargin*2 */
+@media (min-width: 1644px ) {
+  .sg-instant-store {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(calc((1024px + 150px) / 2), -50%);
+    -moz-transform: translate(calc((1024px + 150px) / 2), -50%);
+    -ms-transform: translate(calc((1024px + 150px) / 2), -50%);
+    -o-transform: translate(calc((1024px + 150px) / 2), -50%);
+    transform: translate(calc((1024px + 150px) / 2), -50%);
+  }
+  .sg-instant-store + .sg-instant-store {
+    left: auto;
+    right: 50%;
+    -webkit-transform: translate(calc((1024px + 150px) / -2), -50%);
+    -moz-transform: translate(calc((1024px + 150px) / -2), -50%);
+    -ms-transform: translate(calc((1024px + 150px) / -2), -50%);
+    -o-transform: translate(calc((1024px + 150px) / -2), -50%);
+    transform: translate(calc((1024px + 150px) / -2), -50%);
+  }
+}
+
+@media (max-width: 1643px ) {
+  .sg-instant-store {
+    right: 20px;
+    bottom: 20px;
+  }
+  .sg-instant-store + .sg-instant-store {
+    display: none;
+  }
 }
