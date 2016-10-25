@@ -58,6 +58,7 @@ h1.title > a {
   position: relative;
   padding-right: 200px;
   padding-left: 200px;
+  list-style: none;
 }
 .sg-funny-banner > li:before {
   content: '広告';
