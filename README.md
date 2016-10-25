@@ -7,8 +7,22 @@ You don't need to make a Pull Request. When you edit HTML or customized CSS on T
 
 ## HTML
 
+### file
+
 https://github.com/kyoyababa/dsgn.tokyo/tree/master/index.html
+
+### history
+
+https://github.com/kyoyababa/dsgn.tokyo/commits/master/index.html
 
 ## CSS
 
+### file
+
 https://github.com/kyoyababa/dsgn.tokyo/tree/master/custom.css
+
+### history
+
+https://github.com/kyoyababa/dsgn.tokyo/commits/master/custom.css
+
+# That's all. Enjoy!
