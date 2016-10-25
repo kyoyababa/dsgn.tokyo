@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <!--------------------------------------------
+        Simplify Theme
+        Version: 1.21
+        Created by: Amit Jakhu
+        Website: http://www.amitjakhu.com
+        Support: http://simplifytheme.tumblr.com
+        --------------------------------------------->
+        <title>{Title}{block:TagPage} - {Tag}{/block:TagPage}{block:SearchPage} - {SearchQuery}{/block:SearchPage}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="apple-touch-icon" href="{PortraitURL-128}" />
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {block:PostSummary}
+        <meta property="og:title" content="{PostSummary} - {Name}" />
+        {/block:PostSummary}
+        
+        <meta property="og:site_name" content="{Title}"/>
+        {block:IndexPage}
+        <meta property="og:title" content="{Title}"/>
+        <meta property="og:type" content="blog"/>
+        <meta property="og:description" content="{MetaDescription}"/>
+        <meta property="og:image" content="{PortraitURL-128}"/>
+        {/block:IndexPage}
+        {block:PermalinkPage}
+        <meta property="og:url" content="{Permalink}"/>
+        <meta property="og:type" content="article"/>
+        {block:Posts}
+        {block:Text}
+        {block:Title}<meta property="og:title" content="{PlaintextTitle}"/>{/block:Title}
+        <meta property="og:description" content="{PlaintextBody}"/>
+        {/block:Text}
+        {block:Photo}
+        <meta property="og:image" content="{PhotoURL-500}"/>
+        {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+        {/block:Photo}
+        {block:Photoset}
+        {block:Photos}
+        <meta property="og:image" content="{PhotoURL-500}"/>
+        {/block:Photos}
+        {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+        {/block:Photoset}
+        {block:Quote}
+        <meta property="og:title" content="{PlaintextQuote}"/>
+        <meta property="og:description" content="{PlaintextSource}"/>
+        <meta property="og:image" content="{PortraitURL-128}"/>
+        {/block:Quote}
+        {block:Link}
+        <meta property="og:title" content="{PlaintextName}"/>
+        <meta property="og:description" content="{PlaintextDescription}"/>
+        <meta property="og:image" content="{PortraitURL-128}"/>
+        {/block:Link}
+        {block:Chat}
+        <meta property="og:title" content="{PlaintextTitle}"/>
+        <meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+        <meta property="og:image" content="{PortraitURL-128}"/>
+        {/block:Chat}
+        {block:Audio}
+        <meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+        <meta property="og:description" content="{PlaintextCaption}"/>
+        {block:AlbumArt}<meta property="og:image" content="{AlbumArtURL}"/>{/block:AlbumArt}
+        {/block:Audio}
+        {block:Video}
+        {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+        {/block:Video}
+        {block:Answer}
+        <meta property="og:title" content="{PlaintextQuestion}"/>
+        <meta property="og:description" content="{PlaintextAnswer}"/>
+        <meta property="og:image" content="{PortraitURL-128}"/>
+        {/block:Answer}
+        {/block:Posts}
+        {/block:PermalinkPage}
+        
+        <meta name="if:Portrait" content="1"/>
+        <meta name="if:Night Mode" content="1"/>
+        <meta name="if:Promote Tumblr" content="1"/>
+        <meta name="text:Disqus Shortname" content=""/>
+        <meta name="text:Google Analytics ID" content=""/>
+        
+        <link rel="stylesheet" href="http://static.tumblr.com/ypi9dez/E6umyc2p8/normalize.min.css">
+        <link rel="stylesheet" href="http://static.tumblr.com/ypi9dez/rWwo3amf3/style.css">
+        {block:IfPromoteTumblr}<link rel="stylesheet" href="http://static.tumblr.com/ypi9dez/FsFo3am30/promote.css">{/block:IfPromoteTumblr}
+        {block:IfNotNightMode}<link rel="stylesheet" href="http://static.tumblr.com/ypi9dez/rk6myhrlt/day.css">{/block:IfNotNightMode}
+        
+        {block:IfNightMode}<script type="text/JavaScript">
+            function getStylesheet() {
+                  var currentTime = new Date().getHours();
+                  if (0 <= currentTime&&currentTime < 6) {
+                   document.write("<link rel='stylesheet' href='http://static.tumblr.com/ypi9dez/CQqn9vdw8/night.css' type='text/css'>");
+                  }
+                  if (6 <= currentTime&&currentTime < 20) {
+                   document.write("<link rel='stylesheet' href='http://static.tumblr.com/ypi9dez/rk6myhrlt/day.css' type='text/css'>");
+                  }
+                  if (20 <= currentTime&&currentTime <= 24) {
+                   document.write("<link rel='stylesheet' href='http://static.tumblr.com/ypi9dez/CQqn9vdw8/night.css' type='text/css'>");
+                  }
+            }
+            getStylesheet();
+        </script>{/block:IfNightMode}
+        
+        <style>
+
+        {CustomCSS}
+        
+        </style>
+        
+        <!--[if lt IE 9]>
+            <script src="http://static.tumblr.com/ypi9dez/25Smyc2mx/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <!-----LINKS----->
+
+        <nav class="menu">
+            <div class="wrapper">
+                <h6 class="menu-title"><a href="/">{block:IfPortrait}<img src="{PortraitURL-64}" alt="{Title}"> {/block:IfPortrait}{Title}</a></h6>
+                <div id="menu-button" class="nav-button"><hr><hr><hr><span class="close">x</span></div>
+            </div>
+        </nav>
+        
+        <div id="menu">
+            <div id="search">
+                <form action="/search" method="get"><input type="search" name="q" placeholder="Search..." name="s"></form>
+            </div>
+            <ul id="links" class="clearfix">
+                {block:HasPages}
+                {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+                {/block:HasPages}
+                {block:AskEnabled}
+                <li><a href="/ask">Ask me</a></li>
+                {/block:AskEnabled}
+                {block:SubmissionsEnabled}
+                <li><a href="/submit">Submit</a></li>
+                {/block:SubmissionsEnabled}
+                <li><a href="/archive">Archive</a></li>
+                <li><a href="{RSS}">RSS</a></li>
+                <li class="copyright"><a href="http://simplifytheme.tumblr.com">Simplify</a> version 1.21. Theme Designed &amp; Developed by <a href="http://amitjakhu.com"/>Amit Jakhu</a>. Powered by <a href="http://tumblr.com">Tumblr</a>.</li>
+            </ul>
+        </div>
+        
+        {block:IndexPage}<header>
+            {block:IfPortrait}<a href="/" class="portrait"><img src="{PortraitURL-128}" alt="{Title}"></a>{/block:IfPortrait}
+            <h1 class="title"><a href="/">{Title}</a></h1>
+        </header>{/block:IndexPage}
+        
+        {block:TagPage}<h2 class="page-title">Posts tagged “{Tag}”</h2>{/block:TagPage}
+        
+        {block:SearchPage}<h2 class="page-title">Search results for “{SearchQuery}”</h2>
+            {block:NoSearchResults}<p class="page-title">No results found.</p>{/block:NoSearchResults}{/block:SearchPage}
+        
+        <section id="posts"{block:PermalinkPage} class="permalink-page"{/block:PermalinkPage}>
+            {block:Posts}{block:Text}
+                    <article id="{PostID}" class="post text">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}{Body}
+                    </article>
+                {/block:Text}{block:Photo}
+                    <article id="{PostID}" class="post photo">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        <figure>
+                            {LinkOpenTag}
+                                <img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>
+                            {LinkCloseTag}
+                        </figure>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Photo}{block:Panorama}
+                    <article id="{PostID}" class="post panorama">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        <figure>
+                            {LinkOpenTag}
+                                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                            {LinkCloseTag}
+                        </figure>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Panorama}{block:Photoset}
+                    <article id="{PostID}" class="post photoset">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        <figure class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+                            {block:Photos}
+                                <div class="photo-data">
+                                    <div class="pxu-photo">
+                                        <a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"><img alt="{PhotoAlt}" src="{PhotoURL-1280}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></a>
+                                    </div>
+                                </div>
+                            {/block:Photos}
+                        </figure>
+                        {block:Caption}
+                        <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Photoset}{block:Quote}
+                    <article id="{PostID}" class="post quote">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        <h3>{Quote}</h3>
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </article>
+                {/block:Quote}{block:Link}
+                    <article id="{PostID}" class="post link">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        <h3><a href="{URL}" class="link" {Target}>{Name}</a></h3>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </article>
+                {/block:Link}{block:Chat}
+                    <article id="{PostID}" class="post chat">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}{Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </article>
+                {/block:Chat}{block:Video}
+                    <article id="{PostID}" class="post video">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        <figure>
+                            {Video-500}
+                        </figure>
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Video}{block:Audio}
+                    <article id="{PostID}" class="post audio">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        <figure>
+                            {AudioPlayerWhite}
+                        </figure>
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Audio}{block:Answer}
+                    <article id="{PostID}" class="post answer">
+                    <div class="post-date"><a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}<br>{Year}</a></div>
+                        <h3><a href="{Permalink}">{Question}</a></h3>
+
+                        <div class="response"><strong class="label">Answer: </strong>{Answer}</div>
+                    </article>
+                {/block:Answer}
+                <p class="sg-funny-banner">
+                    <a href="https://post-code.info/" target="_blank">
+                        <img src="https://scontent-nrt1-1.xx.fbcdn.net/t31.0-8/s960x960/14711122_1709233172729425_3696826183212091516_o.jpg" alt="郵便番号から住所を知りたいだと？俺たちに任せな。">
+                    </a>
+                </p>
+                <footer class="clearfix">
+                    {block:HasTags}<ul class="tags clearfix">
+                        {block:Tags}<li class="tag"><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
+                    </ul>{/block:HasTags}
+                    <ul class="info clearfix">
+                        <li class="date"><a href="{Permalink}">{Month} {DayOfMonthWithZero}, {Year}</a></li>
+                        {block:ContentSource}<li><a href="{SourceURL}">{lang:Source}: {block:SourceLogo}<img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}</a></li>{/block:ContentSource}
+                    </ul>
+                </footer>
+                {/block:Posts}
+        </section>
+        
+        {block:PermalinkPagination}{block:IfDisqusShortname}<!-----DISQUS COMMENTS----->
+        <section id="disqus" class="clearfix">
+            <h4>Recent comments</h4>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+            <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
+        </section>
+        <!-----END DISQUS COMMENTS----->{/block:IfDisqusShortname}{/block:PermalinkPagination}
+        {block:PermalinkPage}{block:PostNotes}<!-----POST NOTES----->
+        <section id="notes" class="clearfix">
+            {PostNotes}
+        </section>
+        <!-----END POST NOTES----->{/block:PostNotes}{/block:PermalinkPage}
+
+        {block:IndexPage}{block:Pagination}<!-----PAGE NAVIGATION----->
+        <nav class="navigation clearfix">
+            {block:NextPage}
+                <a href="{NextPage}" class="nav-next">Older Posts</a>
+            {/block:NextPage}
+        
+            {block:PreviousPage}
+                <a href="{PreviousPage}" class="nav-previous">Newer Posts</a>
+            {/block:PreviousPage}
+        </nav>
+        <!-----PAGE NAVIGATION----->{/block:Pagination}{/block:IndexPage}
+        {block:PermalinkPage}{block:PermalinkPagination}<!-----PERMALINK NAVIGATION----->
+        <nav class="navigation clearfix">
+            {block:PreviousPost}
+                <a href="{PreviousPost}" class="nav-previous permalink-nav-previous">Older Post</a>
+            {/block:PreviousPost}
+        
+            {block:NextPost}
+                <a href="{NextPost}" class="nav-next permalink-nav-next">Newer Post</a>
+            {/block:NextPost}
+        </nav>
+        <!-----PERMALINK NAVIGATION----->{/block:PermalinkPagination}{/block:PermalinkPage}
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="http://static.tumblr.com/ypi9dez/NF5mye0bi/jquery.easing.1.3.min.js"></script>
+        <!-----PHOTOSET----->
+        <script src="http://static.tumblr.com/ypi9dez/yPqml8j24/imagesloaded.min.js"></script>
+        <script src="http://static.tumblr.com/ypi9dez/Fdfmneyei/pxuphotoset.min.js"></script>
+        <script>
+            $('.photo-slideshow').pxuPhotoset({
+                'ligthbox'  : true,
+                'highRes'   : true,
+                'rounded'   : 'corners',
+                'exif'      : false,
+                'captions'  : false,
+                'gutter'    : '15px',
+                'photoset'  : '.photo-slideshow',
+                'photoWrap' : '.photo-data',
+                'photo'     : '.pxu-photo'
+            }, function() {
+                $(this).animate({opacity:1});
+            });
+        </script>
+         <!-----MENU----->
+        <script>
+            $('#menu-button').click(function(){
+                $('#menu').toggleClass('fullscreen');
+                $('body').toggleClass('noscroll');
+                $('.menu-title').addClass('show');
+                $('.nav-button hr').toggleClass('hide');
+                $('.nav-button .close').toggleClass('show');
+            });
+        </script>
+        <!-----SCROLL----->
+        {block:IndexPage}<script>
+            $(document).scroll(function () {
+                var y = $(this).scrollTop();
+                if (y > 300) {
+                    $('.menu-title').addClass('show');
+                } else {
+                    $('.menu-title').removeClass('show');
+                }
+            });
+        </script>{/block:IndexPage}
+        {block:PermalinkPage}<script>
+            $('.menu-title').addClass('show');
+        </script>{/block:PermalinkPage}
+        <!-----ARROW KEY BINDINGS----->
+        {block:IndexPage}
+        <script>
+            {block:PreviousPage}function leftArrowPressed() {window.location = '{PreviousPage}';}{/block:PreviousPage}
+            {block:NextPage}function rightArrowPressed() {window.location = '{NextPage}';}{/block:NextPage}
+            document.onkeydown = function(evt) {
+                evt = evt || window.event;
+                switch (evt.keyCode) {
+                    {block:PreviousPage}case 37:
+                        leftArrowPressed();
+                        break;{/block:PreviousPage}
+                    {block:NextPage}case 39:
+                        rightArrowPressed();
+                        break;{/block:NextPage}
+                }
+            };
+        </script>
+        {/block:IndexPage}
+        {block:PermalinkPagination}
+        <script>
+            {block:NextPost}function leftArrowPressed() {window.location = '{NextPost}';}{/block:NextPost}
+            {block:PreviousPost}function rightArrowPressed() {window.location = '{PreviousPost}';}{/block:PreviousPost}
+            document.onkeydown = function(evt) {
+                evt = evt || window.event;
+                switch (evt.keyCode) {
+                    {block:NextPost}case 37:
+                        leftArrowPressed();
+                        break;{/block:NextPost}
+                    {block:PreviousPost}case 39:
+                        rightArrowPressed();
+                        break;{/block:PreviousPost}
+                }
+            };
+        </script>
+        {/block:PermalinkPagination}
+        <!-----RESPONSIVE VIDEO----->
+        <script src="http://static.tumblr.com/ypi9dez/JNamp6ag6/fluidvids.min.js"></script>
+        <!-----DISQUS SCRIPT----->
+        {block:IfDisqusShortname}
+        <script>
+            (function() {
+                var links = document.getElementsByTagName('a');
+                var query = '?';
+                for(var i = 0; i < links.length; i++) {
+                    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+                        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+                    }
+                }
+                document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+            })();
+        </script>
+        {/block:IfDisqusShortname}
+        <!-----GOOGLE ANALYTICS----->
+        {block:IfGoogleAnalyticsID}
+            <script>
+                var _gaq=[["_setAccount","{text:Google Analytics ID}"],["_trackPageview"]];
+                (function(d,t){
+                    var g=d.createElement(t), s=d.getElementsByTagName(t)[0];
+                    g.async=1;
+                    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+                    s.parentNode.insertBefore(g,s)
+                }(document,"script"));
+            </script>
+        {/block:IfGoogleAnalyticsID}
+    </body>
+</html>
