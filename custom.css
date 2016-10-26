@@ -10,22 +10,58 @@
 * {
   font-family: "Mplus 1p";
 }
-
 .menu .wrapper, #links, #search, .title, #posts, .post, .post h3, .post p, .post ul, .post ol, .post .caption, .post .description, #posts footer, .response, #disqus, #notes, .page-title {
   max-width: 1024px;
 }
-
 @media (max-width: 1643px ) {
   .menu .wrapper, #links, #search, .title, #posts, .post, .post h3, .post p, .post ul, .post ol, .post .caption, .post .description, #posts footer, .response, #disqus, #notes, .page-title {
     padding-right: 150px;
   }
 }
 
+/**
+ * Header (Key Visual)
+ **/
+header {
+  background-image: url(http://static.tumblr.com/028846e7210f255718e2b292bd010ea9/uvuqnvk/TVVofmwwf/tumblr_static_tumblr_static_1rn39ly4jick84gow0k0cwock_640.png);
+  margin-top: 0 !important;
+  padding-top: 25vh;
+  padding-bottom: 5px;
+}
+header > * {
+  position: relative;
+  z-index: 1;
+}
+header:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: -webkit-linear-gradient(top, rgba(255,255,255, 0.5) 0%, #FFFFFF 100%);
+  background: -moz-linear-gradient(top, rgba(255,255,255, 0.5) 0%, #FFFFFF 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255, 0.5) 0%, #FFFFFF 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255, 0.5) 0%, #FFFFFF 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255, 0.5) 0%, #FFFFFF 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='#FFFFFF',GradientType=0 );
+}
+
+/**
+ * Square Logo
+ **/
 .portrait,
 .portrait > img {
   border-radius: 0;
 }
+.portrait {
+  padding: 10px;
+  background-color: #FFFFFF;
+}
 
+/**
+ * Title (sitename in Key Visual)
+ **/
 h1.title {
   position: relative;
   margin-top: 60px !important;
@@ -35,7 +71,7 @@ h1.title {
 }
 h1.title:before {
   content: '';
-  opacity: 0.25;
+  opacity: 0.5;
   z-index: 1;
   position: absolute;
   top: 25%;
@@ -48,7 +84,7 @@ h1.title:before {
 h1.title > a {
   position: relative;
   z-index: 2;
-  color: #555555;
+  color: #222222;
 }
 
 /**
@@ -71,11 +107,9 @@ h1.title > a {
 .sg-funny-banner > li > a > img {
   width: 100%;
 }
-
 .sg-instant-store {
   position: fixed;
 }
-
 /* min-width => browserMinimumWidth + storeWidth*2 + storeMargin*2 */
 @media (min-width: 1644px ) {
   .sg-instant-store {
@@ -97,7 +131,6 @@ h1.title > a {
     transform: translate(calc((1024px + 150px) / -2), -50%);
   }
 }
-
 @media (max-width: 1643px ) {
   .sg-instant-store {
     right: 20px;
