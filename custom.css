@@ -10,14 +10,17 @@
 * {
   font-family: "Mplus 1p";
 }
+
 .menu .wrapper, #links, #search, .title, #posts, .post, .post h3, .post p, .post ul, .post ol, .post .caption, .post .description, #posts footer, .response, #disqus, #notes, .page-title {
   max-width: 1024px;
 }
-@media (max-width: 1643px ) {
+
+@media (min-width: 769px) and (max-width: 1643px ) {
   .menu .wrapper, #links, #search, .title, #posts, .post, .post h3, .post p, .post ul, .post ol, .post .caption, .post .description, #posts footer, .response, #disqus, #notes, .page-title {
     padding-right: 150px;
   }
 }
+
 
 /**
  * Header (Key Visual)
@@ -92,9 +95,13 @@ h1.title > a {
  **/
 .sg-funny-banner {
   position: relative;
-  padding-right: 200px;
-  padding-left: 200px;
   list-style: none;
+}
+@media (min-width: 769px) {
+  .sg-funny-banner {
+    padding-right: 200px;
+    padding-left: 200px;
+  }
 }
 .sg-funny-banner > li:before {
   content: '広告';
@@ -131,12 +138,51 @@ h1.title > a {
     transform: translate(calc((1024px + 150px) / -2), -50%);
   }
 }
-@media (max-width: 1643px ) {
+@media (max-width: 1643px) {
   .sg-instant-store {
     right: 20px;
     bottom: 20px;
   }
   .sg-instant-store + .sg-instant-store {
     display: none;
+  }
+}
+@media (max-width: 768px) {
+  .sg-instant-store {
+    display: none;
+  }
+}
+
+
+/**
+ * Smartphone global styles
+ **/
+@media (max-width: 768px) {
+  .menu {
+    right: 0;
+    left: 0;
+    padding: 0;
+  }
+
+  .menu > .wrapper {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .menu > .wrapper > .menu-title {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu > .wrapper > .menu-title > a > img {
+    border-radius: 0;
+  }
+
+  h1.title {
+    font-size: 30px;
+  }
+
+  .text img {
+    height: auto;
   }
 }
